@@ -2,7 +2,7 @@ from datetime import datetime
 import requests
 
 
-file_path = 'decoratorlogs.txt'
+file_path = 'logs.txt'
 
 
 def get_log(path):
@@ -11,7 +11,7 @@ def get_log(path):
             date_time = datetime.now()
             func_name = func.__name__
             result = func(*args, **kwargs)
-            with open(path, 'w', encoding='utf-8') as file:
+            with open(path, 'a', encoding='utf-8') as file:
                 file.write(f'Дата/время: {date_time}\n'
                            f'Имя функции: {func_name}\n'
                            f'Аргументы: {args, kwargs}\n'

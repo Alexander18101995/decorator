@@ -2,7 +2,7 @@ from datetime import datetime
 import requests
 
 
-file_path = 'logs.txt'
+path = 'logs.txt'
 
 
 def get_log(path):
@@ -21,7 +21,7 @@ def get_log(path):
     return decor
 
 
-@get_log(file_path)
+@get_log(path)
 def get_status(*args, **kwargs):
     url = ','.join(args)
     response = requests.get(url=url)
